@@ -1,0 +1,25 @@
+{
+    "name": "phalcon-enterprise",
+    "description": "Provides extended enterprise functionality for the Phalcon PHP framework.",
+    "keywords": [ 
+        "TechPivot",
+        "Tech",
+        "Pivot",
+        "Phalcon",
+        "Enterprise",
+        "PHP",
+        "Framework"
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "require-dev": {
+        "phalcon/devtools": "~2.0",
+        "phpunit/phpunit": "~4.8"
+    },
+    "config": {
+        "platform": {
+            "ext-phalcon": "2.0.13"
+        }
+    }
+}
