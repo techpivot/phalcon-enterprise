@@ -12,3 +12,8 @@ build:
             - composer install --prefer-source --no-interaction
         after: 
             - bin/install-phalcon.sh
+            
+checks:
+    php:
+        code_rating: true
+        duplication: true
