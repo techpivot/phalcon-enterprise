@@ -12,8 +12,17 @@ build:
             - composer install --prefer-source --no-interaction
         after: 
             - bin/install-phalcon.sh
-            
+
+filter:
+    paths:
+        - 'src/*'
+     
 checks:
     php:
         code_rating: true
         duplication: true
+        
+tools:
+    php_code_sniffer:
+        config:
+            standard: PSR2

@@ -15,7 +15,8 @@
     },
     "require-dev": {
         "phalcon/devtools": "~2.0",
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "~4.8",
+        "techpivot/phalcon-ci-installer": "~1.0"
     },
     "config": {
         "platform": {
