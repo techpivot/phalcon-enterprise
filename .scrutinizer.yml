@@ -11,7 +11,7 @@ build:
         override:
             - composer install --prefer-source --no-interaction
         after: 
-            - bin/install-phalcon.sh
+            - vendor/bin/install-phalcon.sh
 
 filter:
     paths:
