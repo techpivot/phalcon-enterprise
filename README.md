@@ -6,7 +6,9 @@
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/techpivot/phalcon-enterprise/master/LICENSE)
 
 techpivot/phalcon-enterprise is a set of tools, plugins, and components that provide extended enterprise 
-functionality for the Phalcon PHP framework. 
+functionality for the Phalcon PHP framework. This project provides functionality similar to that of the 
+[Phalcon Incubator](https://github.com/phalcon/incubator); however, all adapters and plugins are designed to run
+in production with parity against the current stable and mainline Phalcon versions.
 
 
 ## Installation via Composer
@@ -33,3 +35,14 @@ $loader->register();
 // Composer autoload
 require_once 'vendor/autoload.php';
 ```
+
+
+## Plugins, Adapters, & Extensions
+
+
+
+## References
+
+* [Phalcon PHP Framework](https://phalconphp.com)
+* [Phalcon Incubator](https://github.com/phalcon/incubator)
+* [TechPivot](https://www.techpivot.net)
