@@ -9,12 +9,12 @@ use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Dispatcher\Exception as DispatcherException;
 
 /**
- * NotFoundPlugin.
+ * NotFoundHandler.
  *
  * Automatically forwards the dispatcher to the specified error handler when the dispatched route
  * results in an invalid action or invalid handler.
  */
-class NotFoundPlugin extends Plugin
+class NotFoundHandler extends Plugin
 {
     /**
      * The dispatch data to forward an invalid handler.
