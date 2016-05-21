@@ -19,6 +19,11 @@
         "phpunit/phpunit": "~4.8",
         "techpivot/phalcon-ci-installer": "~1.0"
     },
+    "autoload": {
+        "psr-4": {
+            "TechPivot\\Phalcon\\Enterprise\\": "src/"   
+        }
+    },
     "config": {
         "platform": {
             "ext-phalcon": "2.0.13"
