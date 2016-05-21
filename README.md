@@ -20,7 +20,7 @@ in production with parity against the current stable and mainline Phalcon versio
       "techpivot/phalcon-enterprise": "~2.1"
   }
 ```
-    Use the following composer.json versions depending on the version of Phalcon installed:
+    Specify the `phalcon-enterprise` version _(as shown in the above example)_ that matches your installed Phalcon version:
 
     | Phalcon Version | Supported | Composer.json Version |
     |-----------------|-----------|-----------------------|
