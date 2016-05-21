@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a7df9b741079837fede15d61a6713c3",
-    "content-hash": "c5b171941e7d503f1744e79fcad62a27",
+    "hash": "044e254d00f27bfc16cbf174cb33ee85",
+    "content-hash": "e06665052f26684cdf00c4c5bb03d2fa",
     "packages": [],
     "packages-dev": [
         {
@@ -64,16 +64,16 @@
         },
         {
             "name": "phalcon/devtools",
-            "version": "v2.0.12",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phalcon/phalcon-devtools.git",
-                "reference": "031dbcf389d00b90818be052d933bc26cb318a47"
+                "reference": "660df5e050af2fe0f8a941402cc5492614e82d9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phalcon/phalcon-devtools/zipball/031dbcf389d00b90818be052d933bc26cb318a47",
-                "reference": "031dbcf389d00b90818be052d933bc26cb318a47",
+                "url": "https://api.github.com/repos/phalcon/phalcon-devtools/zipball/660df5e050af2fe0f8a941402cc5492614e82d9d",
+                "reference": "660df5e050af2fe0f8a941402cc5492614e82d9d",
                 "shasum": ""
             },
             "require": {
@@ -116,7 +116,7 @@
                 "phar",
                 "webtools"
             ],
-            "time": "2016-05-17 16:59:39"
+            "time": "2016-05-21 09:44:47"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
