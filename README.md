@@ -33,7 +33,7 @@ in production with parity against the current stable and mainline Phalcon versio
   ```php
 use Phalcon\Loader;
 
-$loader = Loader();
+$loader = new Loader();
 $loader->registerNamespaces([
     // Custom namespaces
 ]);
