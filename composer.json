@@ -1,6 +1,7 @@
 {
-    "name": "phalcon-enterprise",
+    "name": "techpivot/phalcon-enterprise",
     "description": "Provides extended enterprise functionality for the Phalcon PHP framework.",
+    "license": "MIT",
     "keywords": [ 
         "TechPivot",
         "Tech",

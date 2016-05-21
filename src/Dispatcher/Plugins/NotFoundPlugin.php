@@ -44,7 +44,8 @@ class NotFoundPlugin extends Plugin
      * @param array|null $forwardActionNotFound      The dispatch data to forward an invalid action.
      * @param array|null $forwardUnhandledException  The dispatch data to forward an uncaught error.
      */
-    public function __construct(array $forwardHandlerNotFound = null, array $forwardActionNotFound = null, array $forwardUnhandledException = null)
+    public function __construct(array $forwardHandlerNotFound = null, array $forwardActionNotFound = null,
+        array $forwardUnhandledException = null)
     {
         $this->forwardHandlerNotFound = $forwardHandlerNotFound;
         $this->forwardActionNotFound = $forwardActionNotFound;
@@ -61,7 +62,7 @@ class NotFoundPlugin extends Plugin
      * @return void|false  Returns <tt>false</tt> if the exception is dispatched to a specific error handler; otherwise
      *                     returns <tt>null</tt>.
 	 */
-	public function beforeException(Event $event, Dispatcher $dispatcher, Exception $exception = null)
+	public function beforeException(Event $event, Dispatcher $dispatcher, Exception $exception)
 	{
 		if ($exception instanceof DispatcherException) {
 
