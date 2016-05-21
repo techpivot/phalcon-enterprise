@@ -17,10 +17,17 @@ in production with parity against the current stable and mainline Phalcon versio
 
   ```json
   "require": {
-      "techpivot/phalcon-enterprise": "~1.0"
+      "techpivot/phalcon-enterprise": "~2.1"
   }
 ```
-  
+    Use the following composer.json versions depending on the version of Phalcon installed:
+
+    | Phalcon Version | Supported | Composer.json Version |
+    |-----------------|-----------|-----------------------|
+    | 1.3.x           | ✕        | -                     |
+    | 2.0.x           | ✓         | "~2.0"                |
+    | 2.1.x           | ✓         | "~2.1"                |
+
 2. Run the `composer update` or `composer install` as necessary for your project.
 3. Ensure your Phalcon application loader includes the composer autoloader. For example:
   ```php
