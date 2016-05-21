@@ -46,7 +46,34 @@ require_once 'vendor/autoload.php';
 
 ## Plugins, Adapters, & Extensions
 
+### Dispatcher Plugins
 
+#### CamelizeActionName
+
+Typically URL routing uses hyphenated lowercase letters which do not directly map to equivalently
+named controller actions. In order to fix this the action name is converted into camel case prior to
+dispatching the request.
+
+For example, if the original URL is: http://example.com/admin/products/show-latest-products,
+and you want to name your action ‘showLatestProducts’, then this plugin will automatically handle
+converting the uncamelized URL action such that the handler's action method will be properly
+executed when dispatched.
+
+> This will handle camelizing everything except not found routes in the dispatcher. The router 
+will need to explicitly use the uncamelized form within `$router::notFound()`.
+ 
+#### IndexRedirector
+Ensures that any dispatched route that includes the explicit default index, typically "index", as the
+action or controller is prohibited. The default behavior of allowing the explicit default index is
+a by product of Phalcon's routing system that will allow explicitly matched controllers and actions.
+
+Prohibiting this behavior is useful in ensuring accurate Search Engine Optimization as well as
+providing a level of increased security as default routes can expose information about the underlying
+system architecture.
+ 
+#### NotFoundHandler
+Automatically forwards the dispatcher to the specified error handler when the dispatched route
+results in an invalid action or invalid handler.
 
 ## References
 
