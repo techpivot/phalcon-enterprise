@@ -70,7 +70,6 @@ class NotFoundPlugin extends Plugin
                 case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
                     return $this->forward($dispatcher, $this->forwardHandlerNotFound);
 
-
                 case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
                     return $this->forward($dispatcher, $this->forwardActionNotFound);
             }
