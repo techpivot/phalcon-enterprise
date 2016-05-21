@@ -9,3 +9,27 @@ techpivot/phalcon-enterprise is a set of tools, plugins, and components that pro
 functionality for the Phalcon PHP framework. 
 
 
+## Installation via Composer
+
+1. Add the `techpivot/phalcon-enterprise` repository into the **require** section of your `composer.json` as follows:
+
+  ```json
+  "require": {
+      "techpivot/phalcon-enterprise": "~1.0"
+  }
+```
+  
+2. Run the `composer update` or `composer install` as necessary for your project.
+3. Ensure your Phalcon application loader includes the composer autoloader. For example:
+  ```php
+use Phalcon\Loader;
+
+$loader = Loader();
+$loader->registerNamespaces([
+    // Custom namespaces
+]);
+$loader->register();
+
+// Composer autoload
+require_once 'vendor/autoload.php';
+```
