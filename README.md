@@ -29,20 +29,26 @@ in production with parity against the current stable and mainline Phalcon versio
     | 2.1.x           | ✓         | "~2.1"                |
 
 2. Run the `composer update` or `composer install` as necessary for your project.
-3. Ensure your Phalcon application loader includes the composer autoloader. For example:
-  ```php
-use Phalcon\Loader;
+3. Include in your project loader using Composer autoloading or Phalcon's autoloader:
 
-$loader = new Loader();
-$loader->registerNamespaces([
-    // Custom namespaces
-]);
-$loader->register();
+    * **Phalcon Autoloader**
+        ```php
+        use Phalcon\Loader;
 
-// Composer autoload
-require_once 'vendor/autoload.php';
-```
+        $loader = new Loader();
+        $loader->registerNamespaces([
+            // Your custom namespaces ...
+    
+            // Include TechPivot\Phalcon\Enterprise plugins
+            'TechPivot\Phalcon\Enterprise' => 'vendor/techpivot/phalcon-enterprise/src',
+        ]);
+        $loader->register();
+        ```
 
+    * **Composer Autoloader**
+        ```php
+        require_once 'vendor/autoload.php';
+        ```
 
 ## Plugins, Adapters, & Extensions
 
