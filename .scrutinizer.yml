@@ -20,7 +20,7 @@ filter:
 checks:
     php:
         code_rating: true
-        duplication: true
+        duplication: false
         one_class_per_file: true
         side_effects_or_types: true
         no_mixed_inline_html: false

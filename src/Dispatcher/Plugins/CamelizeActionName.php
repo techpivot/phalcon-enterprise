@@ -52,25 +52,25 @@ class CamelizeActionName extends Plugin
      * @param \Phalcon\Events\Event   $event       The beforeDispatchLoop event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
      */
-	public function beforeDispatchLoop(Event $event, Dispatcher $dispatcher)
-	{
-	    $dispatcher->setActionName(Text::camelize($dispatcher->getActionName()));
-	}
+    public function beforeDispatchLoop(Event $event, Dispatcher $dispatcher)
+    {
+        $dispatcher->setActionName(Text::camelize($dispatcher->getActionName()));
+    }
 
-	/**
-	 * In order for views to respect the uncamelized directory structure the action name must
-	 * be converted back into an uncamelized form.
-	 *
-	 * Note: Until \Phalcon\Text::uncamelize() supports variable delimiter we manually use hyphens.
-	 *
-	 * @link https://github.com/phalcon/cphalcon/issues/10396
-	 *
+    /**
+     * In order for views to respect the uncamelized directory structure the action name must
+     * be converted back into an uncamelized form.
+     *
+     * Note: Until \Phalcon\Text::uncamelize() supports variable delimiter we manually use hyphens.
+     *
+     * @link https://github.com/phalcon/cphalcon/issues/10396
+     *
      * @param \Phalcon\Events\Event   $event       The beforeDispatchLoop event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
-	 */
-	public function afterDispatchLoop(Event $event, Dispatcher $dispatcher)
-	{
-	    $dispatcher->setActionName(strtolower(preg_replace('/(.)([A-Z])/', '$1' .
-	        $this->uncamelizeDelimiter . '$2', $dispatcher->getActionName())));
-	}
+     */
+    public function afterDispatchLoop(Event $event, Dispatcher $dispatcher)
+    {
+        $dispatcher->setActionName(strtolower(preg_replace('/(.)([A-Z])/', '$1' .
+            $this->uncamelizeDelimiter . '$2', $dispatcher->getActionName())));
+    }
 }

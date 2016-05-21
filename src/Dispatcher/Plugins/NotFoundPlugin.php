@@ -52,49 +52,49 @@ class NotFoundPlugin extends Plugin
         $this->forwardUnhandledException = $forwardUnhandledException;
     }
 
-	/**
-	 * Handled when the dispatcher throws an exception of any kind.
-	 *
+    /**
+     * Handled when the dispatcher throws an exception of any kind.
+     *
      * @param \Phalcon\Events\Event   $event       The beforeDispatchLoop event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
      * @param \Exception              $exception   The exception being handled.
      *
      * @return void|false  Returns <tt>false</tt> if the exception is dispatched to a specific error handler; otherwise
      *                     returns <tt>null</tt>.
-	 */
-	public function beforeException(Event $event, Dispatcher $dispatcher, Exception $exception)
-	{
-		if ($exception instanceof DispatcherException) {
+     */
+    public function beforeException(Event $event, Dispatcher $dispatcher, Exception $exception)
+    {
+        if ($exception instanceof DispatcherException) {
 
-			switch ($exception->getCode()) {
+            switch ($exception->getCode()) {
                 case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
                     return $this->forward($dispatcher, $this->forwardHandlerNotFound);
 
 
                 case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
                     return $this->forward($dispatcher, $this->forwardActionNotFound);
-			}
-		}
+            }
+        }
 
-		return $this->forward($dispatcher, $this->forwardUnhandledException);
-	}
+        return $this->forward($dispatcher, $this->forwardUnhandledException);
+    }
 
-	/**
-	 * Convenience helper method to ensure that only dispatched exceptions return <tt>false</tt>, which is
-	 * important as this stops the current dispatch loop.
-	 *
+    /**
+     * Convenience helper method to ensure that only dispatched exceptions return <tt>false</tt>, which is
+     * important as this stops the current dispatch loop.
+     *
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
-	 * @param array|null              $forward     Optional dispatch data.
-	 *
+     * @param array|null              $forward     Optional dispatch data.
+     *
      * @return void|false  Returns <tt>false</tt> if the exception is dispatched to a specific error handler; otherwise
      *                     returns <tt>null</tt>.
-	 */
-	private function forward(Dispatcher $dispatcher, array $forward = null)
-	{
-	    if ($forward !== null) {
-	        $dispatcher->forward($forward);
+     */
+    private function forward(Dispatcher $dispatcher, array $forward = null)
+    {
+        if ($forward !== null) {
+            $dispatcher->forward($forward);
 
-	        return false;
-	    }
-	}
+            return false;
+        }
+    }
 }
