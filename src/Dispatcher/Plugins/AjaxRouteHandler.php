@@ -37,7 +37,7 @@ class AjaxRouteHandler extends Plugin
     /**
      * Automatically handle ajax return data.
      *
-     * @param \Phalcon\Events\Event   $event       The beforeDispatchLoop event.
+     * @param \Phalcon\Events\Event   $event       The afterExecuteRoute event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
      *
      * @return \Phalcon\Http\Response|void
