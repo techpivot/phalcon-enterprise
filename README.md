@@ -54,6 +54,8 @@ in production with parity against the current stable and mainline Phalcon versio
 
 ### Dispatcher Plugins
 
+#### AjaxRouteHandler
+
 #### CamelizeActionName
  
 #### IndexRedirector
