@@ -37,7 +37,7 @@ class AjaxRouteHandler extends Plugin
     /**
      * Automatically handle ajax return data.
      *
-     * @param \Phalcon\Events\Event   $event       The afterExecuteRoute event.
+     * @param \Phalcon\Events\Event   $event       The beforeDispatchLoop event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
      *
      * @return \Phalcon\Http\Response|void
@@ -61,6 +61,10 @@ class AjaxRouteHandler extends Plugin
                     $response->setStatusCode(204);
                 } else {
                     $response->setJsonContent($data);
+
+                    // Phalcon 2.0.x requires setting of the content type. Phalcon >= 2.1.x automatically includes
+                    // this method upon setting of the JSON content.
+                    $response->setContentType('application/json', 'UTF-8');
                 }
 
                 return $response->send();
