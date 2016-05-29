@@ -17,7 +17,7 @@ in production with parity against the current stable and mainline Phalcon versio
 
   ```json
   "require": {
-      "techpivot/phalcon-enterprise": "~2.0"
+      "techpivot/phalcon-enterprise": "~2.1"
   }
 ```
     Specify the `phalcon-enterprise` version _(as shown in the above example)_ that matches your installed Phalcon version:
