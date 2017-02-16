@@ -12,12 +12,12 @@
         "Framework"
     ],
     "require": {
-        "php": ">=5.6.0"
+        "php": ">=7.0.0"
     },
     "require-dev": {
-        "phalcon/devtools": "~2.0",
-        "phpunit/phpunit": "~4.8",
-        "techpivot/phalcon-ci-installer": "~1.0"
+        "phalcon/devtools": "^3.0",
+        "phpunit/phpunit": "^5.7",
+        "techpivot/phalcon-ci-installer": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -26,7 +26,7 @@
     },
     "config": {
         "platform": {
-            "ext-phalcon": "2.0.13"
+            "ext-phalcon": "3.0"
         }
     }
 }
