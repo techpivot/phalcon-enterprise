@@ -54,7 +54,7 @@ class AjaxRouteHandler extends Plugin
 
             /** @var \Phalcon\Http\Response $response */
             $response = $this->getDI()->getShared('response');
-            if ($response->isSent() === false && $response->getStatusCode() === false) {
+            if ($response->isSent() === false && $response->getStatusCode() === null) {
                 $data = $dispatcher->getReturnedValue();
 
                 if ($data === null) {
