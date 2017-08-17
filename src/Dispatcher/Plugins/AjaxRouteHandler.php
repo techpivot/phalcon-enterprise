@@ -42,7 +42,7 @@ class AjaxRouteHandler extends Plugin
      *
      * @return \Phalcon\Http\Response|void
      */
-    public function afterExecuteRoute(Event $event, Dispatcher $dispatcher)
+    public function afterDispatchLoop(Event $event, Dispatcher $dispatcher)
     {
         /** @var \Phalcon\Http\Request $request */
         $request = $this->getDI()->getShared('request');
