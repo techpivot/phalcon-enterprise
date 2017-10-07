@@ -40,9 +40,9 @@ class AjaxRouteHandler extends Plugin
      * @param \Phalcon\Events\Event   $event       The afterExecuteRoute event.
      * @param \Phalcon\Mvc\Dispatcher $dispatcher  The application dispatcher instance.
      *
-     * @return \Phalcon\Http\Response|void
+     * @return void
      */
-    public function afterDispatchLoop(Event $event, Dispatcher $dispatcher)
+    public function afterDispatchLoop(Event $event, Dispatcher $dispatcher): void
     {
         /** @var \Phalcon\Http\Request $request */
         $request = $this->getDI()->getShared('request');
@@ -57,13 +57,20 @@ class AjaxRouteHandler extends Plugin
             if ($response->isSent() === false && $response->getStatusCode() === null) {
                 $data = $dispatcher->getReturnedValue();
 
+                // Note: If we set the content/status code we set the response back into the dispatcher
+                // returned value which allows the \Phalcon\Mvc\Application to properly handle the response
+                // without calling into the view and overwriting the response output.
+                // @see https://github.com/phalcon/cphalcon/blob/44ce3c6d5d00cfe0626ff09c0ce4b825e39389d0/phalcon/mvc/application.zep#L316
+
                 if ($data === null) {
                     $response->setStatusCode(204);
-                } else {
+                    $dispatcher->setReturnedValue($response);
+                } elseif (is_array($data)) {
                     $response->setJsonContent($data);
+                    $dispatcher->setReturnedValue($response);
                 }
 
-                return $response->send();
+                // The string case is already handled inside the the \Phalcon\Mvc\Application::handle()
             }
         }
     }
