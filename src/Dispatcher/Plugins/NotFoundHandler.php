@@ -47,9 +47,11 @@ class NotFoundHandler extends Plugin
      *                                               will have an additional parameter "exception" that contains the
      *                                               handled dispatch <tt>\Exception</tt>.
      */
-    public function __construct(array $forwardHandlerNotFound = null, array $forwardActionNotFound = null,
-        array $forwardUnhandledException = null)
-    {
+    public function __construct(
+        array $forwardHandlerNotFound = null,
+        array $forwardActionNotFound = null,
+        array $forwardUnhandledException = null
+    ) {
         $this->forwardHandlerNotFound = $forwardHandlerNotFound;
         $this->forwardActionNotFound = $forwardActionNotFound;
         $this->forwardUnhandledException = $forwardUnhandledException;

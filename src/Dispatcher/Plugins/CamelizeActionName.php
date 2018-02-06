@@ -33,7 +33,7 @@ class CamelizeActionName extends Plugin
     private $uncamelizeDelimiter;
 
     /**
-     * IndexRedirectorPlugin constructor.
+     * CamelizeActionName constructor.
      *
      * @param string $uncamelizeDelimiter  Specifies the delimiter to use at the conclusion of all dispatching
      *                                     to ensure view paths properly resolve.
@@ -70,7 +70,6 @@ class CamelizeActionName extends Plugin
      */
     public function afterDispatchLoop(Event $event, Dispatcher $dispatcher)
     {
-        $dispatcher->setActionName(strtolower(preg_replace('/(.)([A-Z])/', '$1' .
-            $this->uncamelizeDelimiter . '$2', $dispatcher->getActionName())));
+        $dispatcher->setActionName(Text::uncamelize($dispatcher->getActionName(), $this->uncamelizeDelimiter));
     }
 }
